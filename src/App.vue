@@ -19,16 +19,18 @@ const isComplete = computed(
 // computed함수: data.items가 변경될때만 함수를 실행(결과를 캐싱함)
 const totalItems = computed(() => data.items.length);
 
-// 할일 추가
+// 할일추가: data.newItem은 입력필드와 연결되있으므로 빈값이 아닐경우 추가
 // 할일 객체데이터는 고유 id추가하여 데이터를 구분할 수 있도록 해야함
 function addItem() {
-  data.items.push({
-    id: data.items.length,
-    text: data.newItem,
-    completed: false,
-  });
-  // 할일 추가뒤 입력필드와 연결된 데이터를 빈문자로 초기화
-  data.newItem = '';
+  if (data.newItem !== '') {
+    data.items.push({
+      id: data.items.length,
+      text: data.newItem,
+      completed: false,
+    });
+    // 할일 추가후 입력필드와 연결된 데이터를 빈문자로 초기화
+    data.newItem = '';
+  }
 }
 
 // 할일 삭제
