@@ -1,5 +1,8 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+function test() {
+  consolelog('11');
+}
 </script>
 
 <template>
