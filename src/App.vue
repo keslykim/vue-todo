@@ -44,9 +44,13 @@ function deleteItem(id) {
 }
 
 function test() {
-  console.log('11');
+  console.log('000000');
 }
 test();
+function test1() {
+  console.log('11111');
+}
+test1();
 </script>
 
 <template>
